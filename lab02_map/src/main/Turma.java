@@ -7,7 +7,7 @@ import java.util.List;
 public class Turma {
     private String idTurma;
     private Disciplina disciplina;
-    private List<Aluno> listaDeAlunos = new ArrayList<>();
+    private List<Aluno> listaDeAlunos = new ArrayList<>(); // lista de alunos 
     private Professor professor;
     private String horario;
 
@@ -27,20 +27,17 @@ public class Turma {
         return disciplina;
     }
 
-    public List<Aluno> getListaDeAlunos() {
-        return listaDeAlunos;
-    }
-
     public Professor getProfessor() {
         return professor;
     }
 
     public void setProfessor(Professor professor) {
         this.professor = professor;
-        if (professor != null) {
+        /*if (professor != null) {
             professor.adicionarTurma(this);
-        }
+        }*/
     }
+   
 
     public String getHorario() {
         return horario;
@@ -55,6 +52,10 @@ public class Turma {
             listaDeAlunos.add(aluno);
         }
     }
+    
+    public List<Aluno> getListaDeAlunos(){
+    	return listaDeAlunos;
+    }
 
     public int getNumeroDeAlunos() {
         return listaDeAlunos.size();
@@ -62,18 +63,29 @@ public class Turma {
 
     //Turma como Creator de Rdm
     public Rdm matricular(Aluno aluno) {
-        if (aluno == null) return null;
+        if ((aluno == null) || listaDeAlunos.contains(aluno)) return null;
         adicionarAluno(aluno);
-        aluno.adicionarTurma(this);
+        
+        //listaDeAlunos.add(aluno);
+       
+        //aluno.adicionarTurma(this);
 
         Rdm rdm = new Rdm(aluno, this, LocalDate.now());
         rdms.add(rdm);
-        aluno.adicionarRdm(rdm);
+        
+        //aluno.adicionarRdm(rdm);
+        
         return rdm;
     }
 
     // caso precise um dia acessar RDMs
     public List<Rdm> getRdms() {
         return rdms;
+    }
+    
+    @Override
+    public String toString() {
+        return "Turma " + idTurma + " - " + disciplina.getNome();
+        
     }
 }

@@ -1,14 +1,15 @@
 package main;
 
-import java.util.ArrayList;
-import java.util.List;
+//import java.util.ArrayList;
+//import java.util.List;
 
 public class Professor {
     private String nome;
     private String idProfessor;
-    private List<Turma> turmas = new ArrayList<>();
+    
+    //private List<Turma> turmas = new ArrayList<>();
 
-    Professor(String nome, String idProfessor) {
+    public Professor(String nome, String idProfessor) {
         this.nome = nome;
         this.idProfessor = idProfessor;
     }
@@ -21,7 +22,7 @@ public class Professor {
         return idProfessor;
     }
 
-    public List<Turma> getTurmas() {
+    /* public List<Turma> getTurmas() {
         return turmas;
     }
 
@@ -29,5 +30,6 @@ public class Professor {
         if (turma != null && !turmas.contains(turma)) {
             turmas.add(turma);
         }
-    }
+    } */
+    
 }

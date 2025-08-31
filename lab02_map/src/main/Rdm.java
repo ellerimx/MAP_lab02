@@ -12,12 +12,13 @@ public class Rdm {
     public Rdm(Aluno aluno, Turma turma, LocalDate data) {
         this.aluno = aluno;
         this.turma = turma;
-        this.data = data;
+        this.data = data; // data de matricula
     }
 
     public Aluno getAluno() {
         return aluno;
     }
+    
 
     public Turma getTurma() {
         return turma;
@@ -25,5 +26,12 @@ public class Rdm {
 
     public LocalDate getData() {
         return data;
+    }
+    
+    
+    @Override
+    public String toString() {
+        return aluno.getNome() + " matriculado em " + turma.getDisciplina().getNome()
+               + " (" + turma.getIdTurma() + ") em " + data;
     }
 }

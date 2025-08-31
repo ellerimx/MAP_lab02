@@ -37,6 +37,7 @@ public class ControleAcademico {
         listaDisciplinas.add(novaDisciplina);
         return novaDisciplina;
     }
+    
 
     public Professor criarProfessor(String nome, String codigoProf) {
         Professor professor = new Professor(nome, codigoProf);
@@ -106,8 +107,41 @@ public class ControleAcademico {
     public void atribuirProfessorATurma(String codigoProfessor, String codigoTurma) {
         Professor professor = getProfessorPorCodigo(codigoProfessor);
         Turma turma = getTurmaPorCodigo(codigoTurma);
+        
         if (professor != null && turma != null) {
             turma.setProfessor(professor);
         }
     }
+    
+    // turmas do aluno
+    public List<Turma> getTurmasDoAluno(String matriculaAluno) {
+        List<Turma> turmasAluno = new ArrayList<>();
+        Aluno aluno = getAlunoPorCodigo(matriculaAluno);
+        
+        if (aluno != null) {
+            for (Turma t : listaTurmas) {
+                if (t.getListaDeAlunos().contains(aluno) && !turmasAluno.contains(t)) {
+                    turmasAluno.add(t); // evita duplicacoes
+                }
+            }
+        }
+        return turmasAluno;
+    }
+    
+    //turmas do prof
+    public List<Turma> getTurmasDoProfessor(String codigoProfessor) {
+        List<Turma> turmasProfessor = new ArrayList<>();
+        Professor professor = getProfessorPorCodigo(codigoProfessor);
+        
+        if (professor != null) {
+            for (Turma t : listaTurmas) {
+                if (professor.equals(t.getProfessor()) && !turmasProfessor.contains(t)) {
+                    turmasProfessor.add(t); // evita duplicacoes
+                }
+                
+            }
+        }
+        return turmasProfessor;
+    }
+    
 }

@@ -6,7 +6,8 @@ import java.util.List;
 public class Aluno {
     private String nome;
     private String matricula;
-    private List<Turma> turmas = new ArrayList<>();
+   
+    //private List<Turma> turmas = new ArrayList<>();
 
     //histórico de matrículas/rdms
     private List<Rdm> rdms = new ArrayList<>();
@@ -23,8 +24,9 @@ public class Aluno {
     public String getMatricula() {
         return matricula;
     }
+    
 
-    public List<Turma> getTurmas() {
+   /* public List<Turma> getTurmas() {
         return turmas;
     }
 
@@ -33,7 +35,8 @@ public class Aluno {
             turmas.add(turma);
         }
     }
-
+*/
+    
     //registrar o RDM gerado por Turma
     public void adicionarRdm(Rdm rdm) {
         if (rdm != null && !rdms.contains(rdm)) {
