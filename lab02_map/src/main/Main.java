@@ -24,7 +24,7 @@ public class Main {
         // Matricular alunos
         controle.matricularAlunoEmTurma("A001", "T001");
         controle.matricularAlunoEmTurma("A002", "T002");
-        controle.matricularAlunoEmTurma("A001", "T002"); // A001 em duas turmas
+        controle.matricularAlunoEmTurma("A001", "T002"); 
 
         // Relatórios básicos
         Relatorio.exibirInformacoesProfessores(controle);

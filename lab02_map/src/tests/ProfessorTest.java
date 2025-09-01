@@ -6,14 +6,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class ProfessorTest {
-	// nome, id 
-
     private Professor professor;
 
     private static final String ID_PADRAO = "P001";
     private static final String NOME_PADRAO = "Sabrina";
 
-  //  private static final String NOME_DISCIPLINA_1 = "MAP";
 
     @BeforeEach
     void setUp() {

@@ -46,4 +46,5 @@ class AlunoTest {
         assertEquals(1, turmaTeste.getNumeroDeAlunos());
         assertEquals(1, controle.getTurmasDoAluno(aluno.getMatricula()).size());
     }
+
 }

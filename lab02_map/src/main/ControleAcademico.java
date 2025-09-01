@@ -1,6 +1,7 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ControleAcademico {
@@ -17,19 +18,19 @@ public class ControleAcademico {
     }
 
     public List<Professor> getListaProfessores() {
-        return listaProfessores;
+    	return Collections.unmodifiableList( listaProfessores);
     }
 
     public List<Aluno> getListaAlunos() {
-        return listaAlunos;
+        return Collections.unmodifiableList(listaAlunos);
     }
 
     public List<Turma> getListaTurmas() {
-        return listaTurmas;
+    	return Collections.unmodifiableList( listaTurmas);
     }
 
     public List<Disciplina> getListaDisciplinas() {
-        return listaDisciplinas;
+    	return Collections.unmodifiableList(listaDisciplinas);
     }
 
     public Disciplina adicionarDisciplina(String nome, String codigoDisciplina) {

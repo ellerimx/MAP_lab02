@@ -33,9 +33,6 @@ public class Turma {
 
     public void setProfessor(Professor professor) {
         this.professor = professor;
-        /*if (professor != null) {
-            professor.adicionarTurma(this);
-        }*/
     }
    
 
@@ -65,15 +62,11 @@ public class Turma {
     public Rdm matricular(Aluno aluno) {
         if ((aluno == null) || listaDeAlunos.contains(aluno)) return null;
         adicionarAluno(aluno);
-        
-        //listaDeAlunos.add(aluno);
-       
-        //aluno.adicionarTurma(this);
 
         Rdm rdm = new Rdm(aluno, this, LocalDate.now());
         rdms.add(rdm);
         
-        //aluno.adicionarRdm(rdm);
+        aluno.adicionarRdm(rdm);
         
         return rdm;
     }
